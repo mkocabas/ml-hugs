@@ -32,7 +32,15 @@ source scripts/conda_setup.sh
 
 # Preparing the datasets and models
 
-## Datasets
+## Alternative 1: Single script to prepare data and models
+
+You can run the following script to download SMPL, neuman dataset, pretrained models, and AMASS mocap sequences.
+```
+source scripts/prepare_data_models.sh
+```
+## Alternative 2: Step-by-step data and model preparation
+
+Alternately, follow the steps below to prepare the data for training.
 - Download the SMPL neutral body model
     - Register to [SMPL](https://smpl.is.tue.mpg.de/index.html) website.
     - Download v1.1.0 and SMPL UV obj file from the [download](https://smpl.is.tue.mpg.de/download.php) page.
@@ -49,15 +57,12 @@ source scripts/conda_setup.sh
     - Data ([download](https://docs-assets.developer.apple.com/ml-research/models/hugs/neuman_data.zip))
     - Pretrained models ([download](https://docs-assets.developer.apple.com/ml-research/models/hugs/hugs_pretrained_models.zip))
 
-    Alternately, run the following script to set up data and pretrained models.
-    ```
-    source scripts/prepare_data_models.sh
-    ```
-
 - Download AMASS dataset for novel animation rendering:
   - AMASS dataset is used for rendering novel poses.
   - We used SFU mocap(SMPL+H G) and MPI_mosh (SMPL+H G) subsets, please download from [AMASS](https://amass.is.tue.mpg.de/download.php).
   - Put the downloaded mocap data in to `./data/` folder.
+
+
 
 After following the above steps, you should obtain a folder structure similar to this:
 
